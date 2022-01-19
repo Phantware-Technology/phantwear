@@ -20,7 +20,7 @@ const Left = styled.div`
 `
 
 const Language = styled.span`
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
 `
 const SearchContainer = styled.div`
@@ -50,7 +50,7 @@ const Right = styled.div`
   flex: 1;
 `
 const MenuItem = styled.div`
-  font-size: 14px;
+  font-size: 20px;
   margin-left: 25px;
   cursor: pointer;
 `
@@ -79,7 +79,6 @@ const Navbar = () => {
             </Badge>
           </MenuItem>
         </Right>
-        <MenuItem>REGISTER</MenuItem>
       </Wrapper>
     </Container>
   )
