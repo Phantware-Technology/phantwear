@@ -67,10 +67,26 @@ export const popularProducts = [
   },
   {
     id: 7,
-    img: 'https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png',
+    img: 'https://c8.alamy.com/comp/PWMHAM/white-empty-tracksuit-with-hood-on-white-background-PWMHAM.jpg',
   },
   {
     id: 8,
     img: 'https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png',
+  },
+  {
+    id: 9,
+    img: 'https://l450v.alamy.com/450v/pwkjax/back-of-grey-tracksuit-with-hood-on-white-background-pwkjax.jpg',
+  },
+  {
+    id: 10,
+    img: 'https://previews.123rf.com/images/belchonock/belchonock1910/belchonock191021104/132842624-light-blue-knitted-sweater-on-white-background-top-view.jpg',
+  },
+  {
+    id: 11,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM-LyxwaKjr9vHms_LK4hcGxpvrm011sfLzg&usqp=CAU',
+  },
+  {
+    id: 12,
+    img: 'https://image.shutterstock.com/image-photo/stylish-warm-female-sweater-on-260nw-1350751142.jpg',
   },
 ]
