@@ -68,7 +68,7 @@ const Navbar = () => {
         </Left>
         <Center>
           <Logo />
-          Phant Wears
+          PHANT WEARS
         </Center>
         <Right>
           <MenuItem>REGISTER</MenuItem>
