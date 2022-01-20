@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
+import Login from './pages/Login'
 // import Home from './pages/Home'
-import Product from './pages/Product'
+// import Register from './pages/Register'
 
 function App() {
   return (
     <div>
-      <Product />
+      <Login />
     </div>
   )
 }
