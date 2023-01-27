@@ -50,15 +50,15 @@ export const popularProducts = [
   },
   {
     id: 2,
-    img: 'https://cdn.shopify.com/s/files/1/0101/4832/products/Angela_Natural_Tee.png?v=1606780388',
+    img: 'https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/J4P6CDCSEII6ZA6S3HNLBYR3PY.jpg&w=691',
   },
   {
     id: 3,
-    img: 'https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png',
+    img: 'https://www.collinsdictionary.com/images/full/coat_85116334_1000.jpg?version=4.0.294',
   },
   {
     id: 4,
-    img: 'https://www.burdastyle.com/pub/media/catalog/product/cache/7bd3727382ce0a860b68816435d76e26/107/BUS-PAT-BURTE-1320516/1170x1470_BS_2016_05_132_front.png',
+    img: 'https://asset1.cxnmarksandspencer.com/is/image/mands/SD_01_T59_1132C_F9_X_EC_90',
   },
   {
     id: 5,
