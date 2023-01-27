@@ -5,6 +5,7 @@ import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
 import { mobile } from '../responsive'
 import styled from 'styled-components'
+import { useLocation } from 'react-router-dom'
 
 const Container = styled.div``
 const Title = styled.h1`
@@ -33,6 +34,8 @@ const Select = styled.select`
 const Option = styled.option``
 
 const ProductList = () => {
+  const location = useLocation()
+  console.log('location', location)
   return (
     <Container>
       <Navbar />
