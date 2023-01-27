@@ -1,11 +1,15 @@
 import { Badge } from '@material-ui/core'
 import { Search, ShoppingCartOutlined } from '@material-ui/icons'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
 
 const Container = styled.div`
   height: 60px;
+  a {
+    text-decoration: none;
+  }
   ${mobile({ height: '50px' })}
 `
 
@@ -79,7 +83,7 @@ const Navbar = () => {
         </Left>
         <Center>
           <Logo />
-          PHANT WEARS
+          <Link to='/'>PHANT WEARS</Link>
         </Center>
         <Right>
           <MenuItem>REGISTER</MenuItem>
