@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { popularProducts } from '../data'
 import Product from './Product'
 import axiosInstance from '../utils/axiosInstance'
 
@@ -11,7 +10,7 @@ const Container = styled.div`
   justify-content: space-between;
 `
 
-const Products = ({ cat, sort, filters }) => {
+const Products = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([])
 
@@ -19,19 +18,43 @@ const Products = ({ cat, sort, filters }) => {
     const getProducts = async () => {
       try {
         const res = await axiosInstance.get(
-          cat ? `/products?category=${cat}` : '/products'
+          cat ? `products?category=${cat}` : 'products'
         )
-        console.log('res', res)
-        // const data = await res.json()
-      } catch (error) {}
+        setProducts(res.data)
+      } catch (err) {}
     }
     getProducts()
   }, [cat])
+  useEffect(() => {
+    cat &&
+      setFilteredProducts(
+        products.filter((item) =>
+          Object.entries(filters).every(([key, value]) =>
+            item[key].includes(value)
+          )
+        )
+      )
+  }, [products, cat, filters])
+
+  useEffect(() => {
+    if (sort === 'newest') {
+      setFilteredProducts((prev) =>
+        [...prev].sort((a, b) => a.createdAt - b.createdAt)
+      )
+    } else if (sort === 'asc') {
+      setFilteredProducts((prev) => [...prev].sort((a, b) => a.price - b.price))
+    } else {
+      setFilteredProducts((prev) => [...prev].sort((a, b) => b.price - a.price))
+    }
+  }, [sort])
+
   return (
     <Container>
-      {popularProducts.map((item) => {
-        return <Product item={item} key={item.id} />
-      })}
+      {cat
+        ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
+        : products
+            .slice(0, 8)
+            .map((item) => <Product item={item} key={item.id} />)}
     </Container>
   )
 }
