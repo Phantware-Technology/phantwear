@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Product from './Product'
-import axiosInstance from '../utils/axiosInstance'
+import { publicRequest } from '../utils/requestMethods'
 
 const Container = styled.div`
   padding: 20px;
@@ -17,7 +17,7 @@ const Products = ({ cat, filters, sort }) => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axiosInstance.get(
+        const res = await publicRequest.get(
           cat ? `products?category=${cat}` : 'products'
         )
         setProducts(res.data)
@@ -28,7 +28,7 @@ const Products = ({ cat, filters, sort }) => {
   useEffect(() => {
     cat &&
       setFilteredProducts(
-        products.filter((item) =>
+        products?.filter((item) =>
           Object.entries(filters).every(([key, value]) =>
             item[key].includes(value)
           )
