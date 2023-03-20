@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router'
-import { userRequest } from '../utils/requestMethods'
+import { axiosInstance } from '../utils/requestMethods'
 
 const Success = () => {
   const location = useLocation()
@@ -14,7 +14,7 @@ const Success = () => {
   useEffect(() => {
     const createOrder = async () => {
       try {
-        const res = await userRequest.post('/orders', {
+        const res = await axiosInstance.post('/orders', {
           userId: currentUser._id,
           products: cart.products.map((item) => ({
             productId: item._id,

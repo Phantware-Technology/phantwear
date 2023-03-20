@@ -10,7 +10,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { addProduct } from '../redux/cartRedux'
-import { publicRequest } from '../utils/requestMethods'
+import { axiosInstance } from '../utils/requestMethods'
 
 const Container = styled.div``
 const Wrapper = styled.div`
@@ -116,7 +116,7 @@ const Product = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await publicRequest.get(`/products/find/${id}`)
+        const res = await axiosInstance.get(`/products/find/${id}`)
         setProduct(res.data)
       } catch (err) {}
     }

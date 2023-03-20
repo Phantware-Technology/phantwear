@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 import StripeCheckout from 'react-stripe-checkout'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { userRequest } from '../utils/requestMethods'
+import { axiosInstance } from '../utils/requestMethods'
 
 const KEY = process.env.REACT_APP_STRIPE
 
@@ -147,7 +147,7 @@ const Cart = () => {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const res = await userRequest.post('/checkout/payment', {
+        const res = await axiosInstance.post('/checkout/payment', {
           tokenId: stripeToken.id,
           amount: cart.total * 100,
         })
