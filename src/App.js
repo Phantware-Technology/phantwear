@@ -1,4 +1,10 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  Navigate,
+  Redirect,
+} from 'react-router-dom'
 import Home from './pages/Home'
 import ProductList from './pages/ProductList'
 import Product from './pages/Product'
@@ -8,6 +14,7 @@ import Register from './pages/Register'
 import Success from './pages/Success'
 
 function App() {
+  const user = false
   return (
     <div>
       <BrowserRouter>
@@ -17,8 +24,14 @@ function App() {
           <Route path='/product/:id' element={<Product />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/success' element={<Success />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
+          <Route
+            path='/login'
+            element={!user ? <Navigate to='/' /> : <Login />}
+          />
+          <Route
+            path='/register'
+            element={user ? <Navigate to='/' /> : <Register />}
+          />
         </Routes>
       </BrowserRouter>
     </div>
