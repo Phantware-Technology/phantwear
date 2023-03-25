@@ -6,7 +6,7 @@ export const login = async (dispatch, user) => {
   try {
     const res = await axiosInstance.post('/auth/login', user)
     dispatch(loginSuccess(res.data))
-  } catch (error) {
-    dispatch(loginFailure)
+  } catch (err) {
+    dispatch(loginFailure())
   }
 }
