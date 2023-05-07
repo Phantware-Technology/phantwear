@@ -62,6 +62,11 @@ const MenuItem = styled.div`
   margin-left: 25px;
   ${mobile({ fontSize: '12px', marginLeft: '10px' })}
 `
+const NavLink = styled(Link)`
+  text-decoration: underline;
+  cursor: pointer;
+  color: black;
+`
 
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity)
@@ -77,22 +82,22 @@ const Navbar = () => {
         </Left>
         <Center>
           <Logo />
-          <Link to='/'>PHANT WEARS</Link>
+          <NavLink to='/'>PHANT WEARS</NavLink>
         </Center>
         <Right>
           <MenuItem>
-            <Link to='/register'>REGISTER</Link>
+            <NavLink to='/register'>REGISTER</NavLink>
           </MenuItem>
           <MenuItem>
-            <Link to='/login'>SIGN IN</Link>
+            <NavLink to='/login'>SIGN IN</NavLink>
           </MenuItem>
-          <Link to='/cart'>
+          <NavLink to='/cart'>
             <MenuItem>
               <Badge badgeContent={quantity} color='primary'>
                 <ShoppingCartOutlined />
               </Badge>
             </MenuItem>
-          </Link>
+          </NavLink>
         </Right>
       </Wrapper>
     </Container>
